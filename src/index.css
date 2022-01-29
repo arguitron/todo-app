@@ -1,0 +1,106 @@
+:root {
+  --white: #eee6ce;
+  --red: #b8405e;
+  --green: #2eb086;
+  --blue: #313552;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+span {
+  font-size: 0.8em;
+  font-weight: 700;
+  color: gray;
+}
+
+.input {
+  background-color: #fff;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  color: var(--blue);
+  border: 1px solid var(--green);
+  width: 100%;
+}
+
+.input:focus {
+  outline-color: var(--green);
+}
+
+.btn-add {
+  padding: 0.5em 0.75em;
+  border-radius: 0.25em;
+  border: 1px solid var(--green);
+  background-color: #fff;
+  transition: 0.2s;
+  display: block;
+  width: 100%;
+}
+
+.btn-add:hover {
+  background-color: var(--green);
+  color: #fff;
+  border: 1px solid var(--green);
+}
+
+.btn-add:active {
+  filter: brightness(120%);
+}
+.app-container {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(auto, 1fr));
+}
+.input-container {
+  grid-column: 1/4;
+  padding: 3em;
+}
+
+.grid-container {
+  grid-column: 4/13;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
+  gap: 1.5em;
+  margin-right: 1.5em;
+}
+
+.todo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--white);
+  padding: 0.75em;
+  border-radius: 0.5em;
+  position: relative;
+  width: 300px;
+  max-height: 500px;
+  word-wrap: break-word;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+
+.card-body {
+  padding: 0 1.5em;
+  padding-bottom: 0.75em;
+}
+
+.fa-times-circle {
+  color: var(--red);
+}
+
+.fa-times-circle:hover {
+  filter: brightness(120%);
+}
+
+.fa-check-circle {
+  color: var(--green);
+}
+
+.checked {
+  text-decoration: line-through;
+}
