@@ -1,30 +1,23 @@
-import React, { useReducer } from "react";
+import React, { useReducer, createContext } from "react";
 import { GridTodo } from "./components/GridTodo";
 import { NewTodoInput } from "./components/NewTodoInput";
 import { getDate } from "./helpers/getDate";
 import { todoReducer } from "./helpers/todoReducer";
 
-const initialState = [
-  {
-    id: new Date().getTime(),
-    title: "first task",
-    date: getDate(),
-    done: false,
-  },
-];
+export const DispatchContext = createContext(null);
 
-const ToDOApp = () => {
-  const [todos, dispatch] = useReducer(todoReducer, initialState);
+export const ToDOApp = () => {
+  const [todos, dispatch] = useReducer(todoReducer, []);
   return (
     <>
       <h1>ToDoApp</h1>
-      <div className="app-container">
-        <NewTodoInput dispatch={dispatch} />
+      <DispatchContext.Provider value={dispatch}>
+        <div className="app-container">
+          <NewTodoInput dispatch={dispatch} />
 
-        <GridTodo todos={todos} />
-      </div>
+          <GridTodo todos={todos} />
+        </div>
+      </DispatchContext.Provider>
     </>
   );
 };
-
-export default ToDOApp;
