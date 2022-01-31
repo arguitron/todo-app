@@ -1,7 +1,6 @@
 import React, { useReducer, createContext } from "react";
 import { GridTodo } from "./components/GridTodo";
 import { NewTodoInput } from "./components/NewTodoInput";
-import { getDate } from "./helpers/getDate";
 import { todoReducer } from "./helpers/todoReducer";
 
 export const DispatchContext = createContext(null);

@@ -104,3 +104,27 @@ span {
 .checked {
   text-decoration: line-through;
 }
+
+.edit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fa-edit:hover {
+  color: blue;
+}
+
+.fa-edit {
+  transition: 0.2s;
+}
+
+.edit-input {
+  outline: 0;
+  padding: 0.5em;
+  background-color: transparent;
+  border-width: 0 0 1px 0;
+}
+
+.edit-input:focus {
+  border-color: green;
+}

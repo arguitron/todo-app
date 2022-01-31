@@ -28,6 +28,17 @@ export const todoReducer = (state = [], action) => {
     case "delete":
       return state.filter((todo) => todo.id !== action.payload);
 
+    case "edit":
+      return state.map((todo) => {
+        if (todo.id === action.payload.id) {
+          return {
+            ...todo,
+            title: action.payload.data,
+          };
+        } else {
+          return todo;
+        }
+      });
     default:
       return state;
   }
