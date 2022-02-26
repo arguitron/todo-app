@@ -7,6 +7,7 @@ export const Todo = ({ todo }) => {
   const [edit, setEdit] = useState(false);
   const handleCheck = () => {
     dispatch({ type: "done", payload: todo.id });
+    setEdit(false);
   };
 
   const handleDelete = () => {
@@ -34,7 +35,7 @@ export const Todo = ({ todo }) => {
           <i onClick={handleEdit} className="fas fa-edit"></i>
         </div>
       </div>
-      <button className="btn-add" onClick={handleCheck}>
+      <button className="btn-done" onClick={handleCheck}>
         Done!
       </button>
     </div>

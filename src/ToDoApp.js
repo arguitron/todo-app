@@ -8,7 +8,7 @@ export const DispatchContext = createContext(null);
 export const ToDOApp = () => {
   const [todos, dispatch] = useReducer(todoReducer, []);
   return (
-    <>
+    <div className="global-container">
       <h1>ToDoApp</h1>
       <DispatchContext.Provider value={dispatch}>
         <div className="app-container">
@@ -17,6 +17,6 @@ export const ToDOApp = () => {
           <GridTodo todos={todos} />
         </div>
       </DispatchContext.Provider>
-    </>
+    </div>
   );
 };
